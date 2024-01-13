@@ -1,0 +1,17 @@
+local Repli = game:GetService("ReplicatedStorage")
+
+if game.PlaceId == 13083893317 then
+    Repli.PlayerStats.WxsteV10.Cash.Changed:Connect(function()
+        Repli.PlayerStats.WxsteV10:WaitForChild"Cash"
+        Repli.PlayerStats.WxsteV10.Cash.Value = 100
+    end)
+end
+
+if game.PlaceId == 13083893317 then
+    Repli.PlayerStatsAdded:Connect(function()
+        Repli.PlayerStats.WxsteV10:WaitForChild"Cash"
+        Repli.PlayerStats.WxsteV10.Cash.Changed:Connect(function()
+            Repli.PlayerStats.WxsteV10.Cash.Value = 100 
+        end)
+    end)
+end
